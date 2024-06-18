@@ -1,0 +1,17 @@
+{
+    "name": "mostafa/php-suptech",
+    "description": "Suptech PHP project",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mostafa-amine",
+            "email": "BRIERE.MOSTAFAAMINE@ofppt-edu.ma"
+        }
+    ],
+    "require": {}
+}
