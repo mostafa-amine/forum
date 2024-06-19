@@ -8,7 +8,7 @@ Router::get('/', [HomeController::class, 'index']);
 Router::get('/questions', [QuestionController::class, 'index']);
 Router::get('/questions/create', [QuestionController::class, 'create']);
 Router::post('/', [QuestionController::class, 'store']);
-Router::get('/questions/{id}', [QuestionController::class, 'view']);
+Router::get('/question', [QuestionController::class, 'show']);
 
 
 Router::dispatch();

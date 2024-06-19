@@ -1,9 +1,9 @@
-<?php require('partials/head.view.php'); ?>
+<?php require(basePath('views/partials/head.view.php')); ?>
 
-<?php require('partials/nav.view.php') ?>
+<?php require(basePath('views/partials/nav.view.php')) ?>
 
 <main class="container">
-    <form method="POST" action="/questions/create">
+    <form method="POST" action="/">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title">
@@ -18,4 +18,4 @@
     </form>
 </main>
 
-<?php require('partials/footer.view.php') ?>
+<?php require(basePath('views/partials/footer.view.php')) ?>

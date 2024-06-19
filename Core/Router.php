@@ -20,7 +20,6 @@ class Router
     {
         $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $requestMethod = $_SERVER['REQUEST_METHOD'];
-
         foreach (self::$routes[$requestMethod] as $path => $options) {
             if ($path === $requestUri) {
                 $controller = new $options[0]();

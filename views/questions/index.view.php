@@ -1,6 +1,6 @@
-<?php require('partials/head.view.php'); ?>
+<?php require(basePath('views/partials/head.view.php')); ?>
 
-<?php require('partials/nav.view.php') ?>
+<?php require(basePath('views/partials/nav.view.php')) ?>
 
 <main class="container">
     <div>
@@ -27,4 +27,4 @@
     </div>
 </main>
 
-<?php require('partials/footer.view.php') ?>
+<?php require(basePath('views/partials/footer.view.php')) ?>
