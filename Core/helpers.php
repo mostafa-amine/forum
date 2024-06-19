@@ -49,8 +49,6 @@ function basePath(string $path)
 
 function view(string $view, array $data = [])
 {
-    // 1. extract sub folders
-    // 2. append .view.php
     $extractedViewPath = explode('.', $view);
     $path = implode('/', $extractedViewPath);
     extract($data);
