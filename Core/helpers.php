@@ -19,7 +19,7 @@ function abort(int $code = 404)
 {
     http_response_code($code);
 
-    require "views/error/{$code}.view.php";
+    require basePath("views/error/{$code}.view.php");
 
     die();
 }
