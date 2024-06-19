@@ -2,6 +2,7 @@
 
 namespace Http\Controllers;
 
+use Core\App;
 use Core\Database;
 use Core\Validator;
 
@@ -9,7 +10,7 @@ class QuestionController
 {
     public function index()
     {
-        $db = new Database(config('database'));
+        $db = App::make(Database::class);
 
         return view('questions.index', [
             'heading' => 'Questions',
@@ -36,7 +37,7 @@ class QuestionController
         if (!$validator->passes()) {
             $errors = $validator->getErrors();
         } else {
-            $db = new Database(config('database'));
+            $db = App::make(Database::class);
             $db->query('insert into questions (content, user_id, title) values(:content, :user_id, :title)', [
                 'content' => $_POST['content'],
                 'title' => $_POST['title'],
@@ -57,7 +58,7 @@ class QuestionController
 
         $userId = 2;
 
-        $db = new Database(config('database'));
+        $db = App::make(Database::class);
 
         $question = $db->query('select * from questions where id = :id', [
             'id' => $questionId
