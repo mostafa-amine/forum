@@ -54,3 +54,10 @@ function view(string $view, array $data = [])
     extract($data);
     require(basePath('views/' . $path . '.view.php'));
 }
+
+function redirect(string $uri)
+{
+    $url = 'http://localhost:8080' . $uri;
+    header('Location: ' . $url);
+    die();
+}
