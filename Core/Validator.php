@@ -97,6 +97,14 @@ class Validator
         return $this;
     }
 
+    public function email()
+    {
+        if (!filter_var($this->value, FILTER_VALIDATE_EMAIL)) {
+            $this->errors[$this->name] = 'Invalid email';
+        }
+        return $this;
+    }
+
     public function passes(): bool
     {
         return empty($this->errors);

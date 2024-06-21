@@ -11,8 +11,4 @@ $container->bind(Database::class, function () {
     return new Database(config('database'));
 });
 
-$container->bind(Validator::class, function () {
-    return new Validator();
-});
-
 App::setContainer($container);
