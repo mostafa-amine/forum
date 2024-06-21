@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use BadMethodCallException;
+
 class Router
 {
     private static $routes = [];
@@ -24,7 +26,10 @@ class Router
             if ($path === $requestUri) {
                 $controller = new $options[0]();
                 $method = $options[1];
-                return $controller->$method();
+                if (method_exists($controller, $method)) {
+                    return $controller->$method();
+                }
+                throw new BadMethodCallException($method . ' This method does not exist in ' . $options[0]);
             }
         }
         abort();
